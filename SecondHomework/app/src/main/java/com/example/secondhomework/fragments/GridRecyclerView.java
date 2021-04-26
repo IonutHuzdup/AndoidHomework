@@ -3,12 +3,18 @@ package com.example.secondhomework.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.secondhomework.R;
+import com.example.secondhomework.adapters.JobAdapter;
+import com.example.secondhomework.models.Job;
+
+import java.util.ArrayList;
 
 public class GridRecyclerView extends Fragment {
 
@@ -17,6 +23,10 @@ public class GridRecyclerView extends Fragment {
 
     private String mParam1;
     private String mParam2;
+
+    private RecyclerView recyclerView;
+    private ArrayList<Job> jobs;
+    private JobAdapter adapter;
 
     public GridRecyclerView() {
         // Required empty public constructor
@@ -41,9 +51,18 @@ public class GridRecyclerView extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grid_recycler_view, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_grid_recycler_view, container, false);
+        recyclerView = view.findViewById(R.id.grid);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, RecyclerView.VERTICAL, false);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        adapter = new JobAdapter(jobs);
+        jobs.add(new Job("1", "1", "1", "1", "1"));
+        jobs.add(new Job("1", "1", "1", "1", "1"));
+        jobs.add(new Job("1", "1", "1", "1", "1"));
+        recyclerView.setAdapter(adapter);
+
+
+        return view;
     }
 }

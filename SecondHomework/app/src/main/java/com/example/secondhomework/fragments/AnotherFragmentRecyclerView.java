@@ -4,20 +4,28 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.secondhomework.R;
+import com.example.secondhomework.adapters.EmployeeAdapter;
 import com.example.secondhomework.adapters.JobAdapter;
+import com.example.secondhomework.interfaces.OnCellClick;
+import com.example.secondhomework.models.Employee;
 import com.example.secondhomework.models.Job;
 
 import java.util.ArrayList;
 
-public class AnotherFragmentRecyclerView extends Fragment {
+import static android.widget.Toast.LENGTH_SHORT;
+
+public class AnotherFragmentRecyclerView extends Fragment implements OnCellClick {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -26,8 +34,8 @@ public class AnotherFragmentRecyclerView extends Fragment {
     private String mParam2;
 
     private RecyclerView recyclerView;
-    private ArrayList<Job> jobs;
-    private JobAdapter adapter;
+    private ArrayList<Employee> employees;
+    private EmployeeAdapter adapter;
 
     public AnotherFragmentRecyclerView() {
         // Required empty public constructor
@@ -65,16 +73,33 @@ public class AnotherFragmentRecyclerView extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        jobs = new ArrayList<Job>();
+        employees = new ArrayList<Employee>();
         View view = inflater.inflate(R.layout.fragment_another_recycler_view,container,false);
         recyclerView = view.findViewById(R.id.another_list);
-        adapter = new JobAdapter(jobs);
+        adapter = new EmployeeAdapter(employees,this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        jobs.add(new Job("1","1","fds","Job","work"));
-        jobs.add(new Job("1","1","fds","Job","work"));
-        jobs.add(new Job("1","1","fds","Job","work"));
+        employees.add(new Employee("1","1","asd","John","asd","5432"));
+        employees.add(new Employee("1","1","asd","John","asd","5432"));
+        employees.add(new Employee("1","1","asd","John","asd","5432"));
+        employees.add(new Employee("1","1","asd","John","asd","5432"));
+
         recyclerView.setAdapter(adapter);
         return view;
+    }
+    @Override
+    public void onClick(int position) {
+         Toast.makeText(getContext(), "USer", LENGTH_SHORT).show();
+         addFragment();
+    }
+
+    @Override
+    public void addFragment() {
+        GridRecyclerView gridRecyclerView = new GridRecyclerView();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        String tag = GridRecyclerView.class.getName();
+        fragmentTransaction.replace(R.id.grid_layout, gridRecyclerView, tag);
+        fragmentTransaction.commit();
     }
 }

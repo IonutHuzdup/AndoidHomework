@@ -5,15 +5,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.secondhomework.R;
 import com.example.secondhomework.interfaces.OnCellClick;
+import com.example.secondhomework.models.Job;
 import com.example.secondhomework.models.User;
 
 import java.util.ArrayList;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.UserViewHolder> {
     private ArrayList<User> users;
