@@ -19,10 +19,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.UserViewHolder> {
     private ArrayList<User> users;
     private OnCellClick click;
 
-    public Adapter(ArrayList<User> users) {
-        this.users = users;
-    }
-
     public Adapter(ArrayList<User> users, OnCellClick click) {
         this.users = users;
         this.click = click;

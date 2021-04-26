@@ -4,12 +4,18 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.secondhomework.R;
+import com.example.secondhomework.adapters.JobAdapter;
+import com.example.secondhomework.models.Job;
+
+import java.util.ArrayList;
 
 public class AnotherFragmentRecyclerView extends Fragment {
 
@@ -18,6 +24,10 @@ public class AnotherFragmentRecyclerView extends Fragment {
 
     private String mParam1;
     private String mParam2;
+
+    private RecyclerView recyclerView;
+    private ArrayList<Job> jobs;
+    private JobAdapter adapter;
 
     public AnotherFragmentRecyclerView() {
         // Required empty public constructor
@@ -54,9 +64,17 @@ public class AnotherFragmentRecyclerView extends Fragment {
     
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_another_recycler_view, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        jobs = new ArrayList<Job>();
+        View view = inflater.inflate(R.layout.fragment_another_recycler_view,container,false);
+        recyclerView = view.findViewById(R.id.another_list);
+        adapter = new JobAdapter(jobs);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+        jobs.add(new Job("1","1","fds","Job","work"));
+        jobs.add(new Job("1","1","fds","Job","work"));
+        jobs.add(new Job("1","1","fds","Job","work"));
+        recyclerView.setAdapter(adapter);
+        return view;
     }
 }

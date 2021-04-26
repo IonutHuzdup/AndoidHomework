@@ -136,10 +136,10 @@ public class FragmentRecyclerView extends Fragment implements OnCellClick {
         fragmentTransaction.replace(R.id.frame_layout, anotherFragmentRecyclerView, tag);
         fragmentTransaction.commit();
     }
-
+    /*
     public void getCompanies() {
         VolleyConfigSingleton volleyConfigSingleton = VolleyConfigSingleton.getInstance(getContext());
-        requestQueue = volleyConfigSingleton.getRequestQueue()
+        requestQueue = volleyConfigSingleton.getRequestQueue();
         String url = "https://608305a05dbd2c001757b0a1.mockapi.io/api/companies";
         StringRequest getCompaniesRequest = new StringRequest(url, null,
                 new Response.Listener<String>() {
@@ -167,5 +167,5 @@ public class FragmentRecyclerView extends Fragment implements OnCellClick {
                 }
         );
 
-    }
+    }*/
 }
