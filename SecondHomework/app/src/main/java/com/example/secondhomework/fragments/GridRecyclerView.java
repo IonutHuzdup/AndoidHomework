@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -52,11 +53,13 @@ public class GridRecyclerView extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        jobs = new ArrayList<Job>();
         View view = inflater.inflate(R.layout.fragment_grid_recycler_view, container, false);
         recyclerView = view.findViewById(R.id.grid);
+        adapter = new JobAdapter(jobs);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(gridLayoutManager);
-        adapter = new JobAdapter(jobs);
+
         jobs.add(new Job("1", "1", "1", "1", "1"));
         jobs.add(new Job("1", "1", "1", "1", "1"));
         jobs.add(new Job("1", "1", "1", "1", "1"));

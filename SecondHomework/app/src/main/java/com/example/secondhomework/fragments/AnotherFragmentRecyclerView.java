@@ -69,28 +69,29 @@ public class AnotherFragmentRecyclerView extends Fragment implements OnCellClick
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         employees = new ArrayList<Employee>();
-        View view = inflater.inflate(R.layout.fragment_another_recycler_view,container,false);
+        View view = inflater.inflate(R.layout.fragment_another_recycler_view, container, false);
         recyclerView = view.findViewById(R.id.another_list);
-        adapter = new EmployeeAdapter(employees,this);
+        adapter = new EmployeeAdapter(employees, this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        employees.add(new Employee("1","1","asd","John","asd","5432"));
-        employees.add(new Employee("1","1","asd","John","asd","5432"));
-        employees.add(new Employee("1","1","asd","John","asd","5432"));
-        employees.add(new Employee("1","1","asd","John","asd","5432"));
+        employees.add(new Employee("1", "1", "asd", "John", "asd", "5432"));
+        employees.add(new Employee("1", "1", "asd", "John", "asd", "5432"));
+        employees.add(new Employee("1", "1", "asd", "John", "asd", "5432"));
+        employees.add(new Employee("1", "1", "asd", "John", "asd", "5432"));
 
         recyclerView.setAdapter(adapter);
         return view;
     }
+
     @Override
     public void onClick(int position) {
-         Toast.makeText(getContext(), "USer", LENGTH_SHORT).show();
-         addFragment();
+        Toast.makeText(getContext(), "USer", LENGTH_SHORT).show();
+        addFragment();
     }
 
     @Override

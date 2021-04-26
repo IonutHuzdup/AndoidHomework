@@ -16,8 +16,8 @@ import java.util.ArrayList;
 public class JobAdapter extends RecyclerView.Adapter<JobAdapter.JobViewHolder> {
     private ArrayList<Job> jobs;
 
-    public JobAdapter(ArrayList<Job> jobs){
-        this.jobs=jobs;
+    public JobAdapter(ArrayList<Job> jobs) {
+        this.jobs = jobs;
     }
 
     @NonNull

@@ -123,7 +123,7 @@ public class FragmentRecyclerView extends Fragment implements OnCellClick {
 
     @Override
     public void onClick(int position) {
-       // Toast.makeText(getContext(), "USer", LENGTH_SHORT).show();
+        // Toast.makeText(getContext(), "USer", LENGTH_SHORT).show();
         addFragment();
     }
 
