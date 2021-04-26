@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FragmentRecyclerView">
+    android:id="@+id/grid_layout"
+    tools:context=".fragments.GridRecyclerView">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
+        android:id="@+id/grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />

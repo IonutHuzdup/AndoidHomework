@@ -2,7 +2,6 @@ package com.example.secondhomework.fragments;
 
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -11,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.secondhomework.R;
 
-public class AnotherFragmentRecyclerView extends Fragment {
+public class GridRecyclerView extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -19,25 +18,14 @@ public class AnotherFragmentRecyclerView extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AnotherFragmentRecyclerView() {
+    public GridRecyclerView() {
         // Required empty public constructor
     }
 
-    public static AnotherFragmentRecyclerView newInstance(String param1, String param2) {
-        AnotherFragmentRecyclerView fragment = new AnotherFragmentRecyclerView();
+    public static GridRecyclerView newInstance(String param1, String param2) {
+        GridRecyclerView fragment = new GridRecyclerView();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public static Fragment newInstance() {
-        AnotherFragmentRecyclerView fragment = new AnotherFragmentRecyclerView();
-        Bundle args = new Bundle();
-        String param1 = null;
-        args.putString(ARG_PARAM1, param1);
-        String param2 = null;
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
@@ -51,12 +39,11 @@ public class AnotherFragmentRecyclerView extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_another_recycler_view, container, false);
+        return inflater.inflate(R.layout.fragment_grid_recycler_view, container, false);
     }
 }

@@ -1,18 +1,14 @@
 package com.example.secondhomework.models;
 
-public class User {
+public class Portofolio {
     private String id;
     private String createdAt;
-    private String name;
     private String avatar;
-    private String description;
 
-    public User(String id, String createdAt, String name, String avatar, String description) {
+    public Portofolio(String id, String createdAt, String avatar) {
         this.id = id;
         this.createdAt = createdAt;
-        this.name = name;
         this.avatar = avatar;
-        this.description = description;
     }
 
     public String getId() {
@@ -23,15 +19,7 @@ public class User {
         return createdAt;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public String getAvatar() {
         return avatar;
-    }
-
-    public String getDescription() {
-        return description;
     }
 }

@@ -1,22 +1,26 @@
 package com.example.secondhomework.models;
 
-public class User {
+public class Job {
     private String id;
+    private String companyId;
     private String createdAt;
     private String name;
-    private String avatar;
     private String description;
 
-    public User(String id, String createdAt, String name, String avatar, String description) {
+    public Job(String id, String companyId, String createdAt, String name, String description) {
         this.id = id;
+        this.companyId = companyId;
         this.createdAt = createdAt;
         this.name = name;
-        this.avatar = avatar;
         this.description = description;
     }
 
     public String getId() {
         return id;
+    }
+
+    public String getCompanyId() {
+        return companyId;
     }
 
     public String getCreatedAt() {
@@ -25,10 +29,6 @@ public class User {
 
     public String getName() {
         return name;
-    }
-
-    public String getAvatar() {
-        return avatar;
     }
 
     public String getDescription() {
