@@ -1,13 +1,9 @@
 package com.example.secondhomework.fragments;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -17,37 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.secondhomework.MainActivity;
 import com.example.secondhomework.R;
-import com.example.secondhomework.VolleyConfigSingleton;
 import com.example.secondhomework.adapters.Adapter;
 import com.example.secondhomework.interfaces.OnCellClick;
 import com.example.secondhomework.models.User;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import kotlin.jvm.internal.Intrinsics;
-
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
-import static android.widget.Toast.LENGTH_SHORT;
-
 public class FragmentRecyclerView extends Fragment implements OnCellClick {
 
     private static final String ARG_PARAM1 = "param1";

@@ -16,11 +16,6 @@ import android.widget.Button;
 import com.example.fa.R;
 import com.example.fa.interfaces.ActivityFragmentCommunication;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link F2A2#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class F2A2 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -37,13 +32,6 @@ public class F2A2 extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment F2A2.
-     */
-    // TODO: Rename and change types and number of parameters
     public static F2A2 newInstance() {
         F2A2 fragment = new F2A2();
         Bundle args = new Bundle();
